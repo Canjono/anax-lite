@@ -1,0 +1,87 @@
+@import url('https://fonts.googleapis.com/css?family=Lora');
+
+html {
+    min-height: 100%;
+    overflow-y: scroll;
+    position: relative;
+}
+
+body {
+    background-color: #101010;
+    color: #ccc;
+    font-family: Lora, "Times New Roman", serif;
+    font-size: 1.7em;
+    line-height: 1.5em;
+    margin-top: 60px;
+    margin-bottom: 150px;
+}
+
+.container {
+    max-width: 960px;
+}
+
+.row {
+    margin-bottom: 30px;
+}
+
+/*************************
+*******Header******
+**************************/
+.navbar {
+    font-family: Helvetica, Arial, sans-serif;
+    background: #101010; /* For browsers that do not support gradients */
+    background: -webkit-gradient(linear, left top, right top, from(#570812), to(#101010)); /* For Old Webkit (Safari 4+, Chrome) */
+    background: -webkit-linear-gradient(left top, #570812, #101010); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #570812, #101010); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #570812, #101010); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, #570812, #101010); /* Standard syntax */
+    min-height: 60px;
+}
+
+
+/*************************
+*******Main******
+**************************/
+.img-me {
+    float: left;
+    margin: 0 1em 0 0;
+    height: 14em;
+}
+
+.img-laptop {
+    height: 18em;
+}
+
+/*************************
+*******Footer******
+**************************/
+
+footer {
+    background: #000000; /* For browsers that do not support gradients */
+    background: -webkit-gradient(linear, left top, right top, from(#570812), to(#101010)); /* For Old Webkit (Safari 4+, Chrome) */
+    background: -webkit-linear-gradient(left top, #570812, #101010); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #570812, #101010); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #570812, #101010); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to top, #570812, #101010); /* Standard syntax */
+    color: #9d9d9d;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    padding: 50px 0 0 0;
+}
+
+/*************************
+*******Responsive******
+**************************/
+@media (max-width: 500px) {
+    .img-me {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        width: 100%;
+        height: auto;
+        margin-bottom: 1em;
+        float: none;
+    }
+}
