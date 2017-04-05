@@ -1,6 +1,7 @@
 <?php
 $laptop = $app->url->asset("img/laptop.png");
 $system = $app->url->create("status");
+$guessNumber = $app->url->create("../../kmom01/guess");
 ?>
 
 <div class="container">
@@ -21,6 +22,7 @@ $system = $app->url->create("status");
             <p>För att skapa hemsidan använder jag mikro-ramverket Anax Lite. All kod för den finns på mitt
                <a href="https://github.com/Canjono/anax-lite" alt="GitHub-repo">repo på GitHub</a>.
             </p>
+            <p>För att spela "Gissa numret" kan du klicka <a href="<?= $guessNumber ?>">här</a>.</p>
             <p>För att att få information om diverse detaljer om det här systemet klicka
                 <a href="<?= $system ?>">här</a>.
             </p>
