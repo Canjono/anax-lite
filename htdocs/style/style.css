@@ -38,6 +38,15 @@ body {
     min-height: 60px;
 }
 
+.navbar-fixed-top {
+    border: none;
+}
+
+.navbar-inverse .navbar-nav > .active > a {
+    background-color: inherit;
+    border-bottom: 1px solid #960E1F;
+}
+
 
 /*************************
 *******Main******
