@@ -19,6 +19,9 @@ $app->response = new \Anax\Response\Response();
 $app->url =     new \Anax\Url\Url();
 $app->router =  new \Anax\Route\RouterInjectable();
 $app->view = new \Anax\View\ViewContainer();
+$app->navbar = new \Canjono\Navbar\Navbar();
+$app->session = new \Canjono\Session\Session();
+$app->calendar = new \Canjono\Calendar\Calendar();
 
 // Inject $app into the view container for use in view files.
 $app->view->setApp($app);
@@ -39,6 +42,19 @@ $app->url->setScriptName($app->request->getScriptName());
 // Update url configuration with values from config file.
 $app->url->configure("url.php");
 $app->url->setDefaultsFromConfiguration();
+
+// Add route to stylesheet
+$app->style = $app->url->asset("css/style.css");
+
+// Inject url creator and current route to navbar
+$app->navbar->setUrlCreator([$app->url, "create"]);
+$app->navbar->setCurrentRoute($app->request->getRoute());
+
+// Update navbar configuration with values from config file.
+$app->navbar->configure("navbar.php");
+
+// Start session
+$app->session->start();
 
 // Load the routes
 require ANAX_INSTALL_PATH . "/config/route.php";

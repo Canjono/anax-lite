@@ -1,7 +1,3 @@
-<?php
-$myStylesheet = $app->url->asset("style/style.css");
-?>
-
 <!doctype html>
 <html lang="sv">
 <head>
@@ -13,7 +9,22 @@ $myStylesheet = $app->url->asset("style/style.css");
     <!-- Get bootstrap stylesheet -->
     <link href="http://getbootstrap.com/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="<?= $myStylesheet ?>" rel="stylesheet">
+    <link href="<?= $app->style ?>" rel="stylesheet">
 
 </head>
 <body role="document">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
+                        aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="<?= $app->url->create('') ?>">Michael Hedlund</a>
+            </div>
+            <?= $app->navbar->getHTML(); ?>
+        </div>
+    </nav>

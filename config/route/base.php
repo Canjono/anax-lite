@@ -3,30 +3,39 @@
  * Base routes
  */
 $app->router->add("", function () use ($app) {
-    $app->view->add("take1/header", ["title" => "Home"]);
-    $app->view->add("navbar1/navbar");
-    $app->view->add("take1/home");
-    $app->view->add("take1/footer");
+    $data = [
+        "title" => "Home",
+    ];
 
-    $app->response->setBody([$app->view, "render"])->send();
+    $app->view->add("take1/layout", $data, "layout");
+    $app->view->add("take1/home", ["region" => "main"], "main", 0);
+
+    $body = $app->view->renderBuffered("layout");
+    $app->response->setBody($body)->send();
 });
 
 $app->router->add("report", function () use ($app) {
-    $app->view->add("take1/header", ["title" => "Report"]);
-    $app->view->add("navbar1/navbar");
-    $app->view->add("take1/report");
-    $app->view->add("take1/footer");
+    $data = [
+        "title" => "Report",
+    ];
 
-    $app->response->setBody([$app->view, "render"])->send();
+    $app->view->add("take1/layout", $data, "layout");
+    $app->view->add("take1/report", ["region" => "main"], "main", 0);
+
+    $body = $app->view->renderBuffered("layout");
+    $app->response->setBody($body)->send();
 });
 
 $app->router->add("about", function () use ($app) {
-    $app->view->add("take1/header", ["title" => "About"]);
-    $app->view->add("navbar1/navbar");
-    $app->view->add("take1/about");
-    $app->view->add("take1/footer");
+    $data = [
+        "title" => "About",
+    ];
 
-    $app->response->setBody([$app->view, "render"])->send();
+    $app->view->add("take1/layout", $data, "layout");
+    $app->view->add("take1/about", ["region" => "main"], "main", 0);
+
+    $body = $app->view->renderBuffered("layout");
+    $app->response->setBody($body)->send();
 });
 
 $app->router->add("status", function () use ($app) {
@@ -40,3 +49,57 @@ $app->router->add("status", function () use ($app) {
 
     $app->response->sendJson($data);
 });
+
+// $app->router->add("", function () use ($app) {
+//     $app->view->add("take1/header", ["title" => "Home"]);
+//     $app->view->add("take1/home");
+//     $app->view->add("take1/footer");
+
+//     $app->response->setBody([$app->view, "render"])->send();
+// });
+
+// $app->router->add("view/test1", function () use ($app) {
+//     $app->view->add("view/test1", [
+//         "title" => "Home",
+//         "message" => "Hello World",
+//         "answer" => 42,
+//     ]);
+
+//     $app->response->setBody([$app->view, "render"])
+//                   ->send();
+// });
+
+// $app->router->add("view/test2", function () use ($app) {
+//     $app->view->add("view/test1", [
+//         "title" => "Home",
+//         "message" => "Hello World",
+//         "answer" => 42,
+//         "copyright" => "Canjono",
+//     ]);
+
+//     $app->response->setBody([$app->view, "render"])
+//                   ->send();
+// });
+
+// $app->router->add("view/test5", function () use ($app) {
+//     // Create default data set to send to the layout
+//     $data = [
+//         "title" => "Index",
+//         "message" => "Hello World"
+//     ];
+
+//     // Add the layout view to its own region
+//     $app->view->add("view/layout", $data, "layout");
+
+//     // Add views to a specific region
+//     $app->view->add("view/block", ["region" => "flash1"], "flash", 0);
+//     $app->view->add("view/block", ["region" => "flash2"], "flash", 1);
+//     $app->view->add("view/block", ["region" => "main1"], "main", 0);
+//     $app->view->add("view/block", ["region" => "main2"], "main", 1);
+//     $app->view->add("view/block", ["region" => "footer1"], "footer", 0);
+//     $app->view->add("view/block", ["region" => "footer2"], "footer", 1);
+
+//     // Render the layout view and send the response
+//     $body = $app->view->renderBuffered("layout");
+//     $app->response->setBody($body)->send();
+// });

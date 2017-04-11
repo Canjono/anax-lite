@@ -24,6 +24,20 @@ body {
     margin-bottom: 30px;
 }
 
+.btn-primary {
+    background: #2B0409; /* For browsers that do not support gradients */
+    background: -webkit-gradient(linear, left top, right top, from(#570812), to(#2B0409)); /* For Old Webkit (Safari 4+, Chrome) */
+    background: -webkit-linear-gradient(left top, #570812, #2B0409); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right, #570812, #2B0409); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #570812, #2B0409); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom, #570812, #2B0409); /* Standard syntax */
+    border-color: #2B0409;
+}
+
+.btn-primary:hover {
+    border-color: #9d9d9d;
+}
+
 /*************************
 *******Header******
 **************************/
@@ -59,6 +73,44 @@ body {
 
 .img-laptop {
     height: 18em;
+}
+
+.table > tbody > tr > td,
+.table > thead > tr > th {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.table .outside {
+    color: #555;
+}
+
+.red {
+    color: red;
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.calendar .month {
+    text-align: center;
+}
+
+.calendar .calendar-image {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    margin-bottom: 1em;
+}
+
+.img-calendar {
+    width: 100%;
+    margin-top: -80px;
 }
 
 /*************************
