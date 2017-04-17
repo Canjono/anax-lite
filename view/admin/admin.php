@@ -27,8 +27,9 @@ $search = $app->url->create("admin/search");
     <div class="row">
         <div class="col">
             <p>
-                <a href="<?= $hits2 ?>">2</a>
-                <a href="<?= $hits4 ?>">4</a>
+                Användare per sida: 
+                <a href="<?= $hits2 ?>">2</a> |
+                <a href="<?= $hits4 ?>">4</a> |
                 <a href="<?= $hits8 ?>">8</a>
             </p>
         </div>
@@ -42,11 +43,17 @@ $search = $app->url->create("admin/search");
     </div>
     <div class="row">
         <div class="col">
-            <?php for ($i = 1; $i <= $max; $i++) : ?>
-                <a href="<?= $app->functions->mergeQueryString(['page' => $i]) ?>">
-                    <?= $i ?>
-                </a>
-            <?php endfor; ?>
+            <nav aria-label="Sida">
+                <ul class="pagination pagination-sm">
+                    <?php for ($i = 1; $i <= $max; $i++) : ?>
+                        <li>
+                        <a href="<?= $app->functions->mergeQueryString(['page' => $i]) ?>">
+                            <?= $i ?>
+                        </a>
+                        </li>
+                    <?php endfor; ?>
+                </ul>
+            </nav>
         </div>
     </div>
     <div class="row">

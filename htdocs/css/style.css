@@ -24,6 +24,7 @@ body {
     margin-bottom: 30px;
 }
 
+.pagination a,
 .btn-primary {
     background: #2B0409; /* For browsers that do not support gradients */
     background: -webkit-gradient(linear, left top, right top, from(#570812), to(#2B0409)); /* For Old Webkit (Safari 4+, Chrome) */

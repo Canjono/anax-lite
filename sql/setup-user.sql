@@ -1,6 +1,7 @@
 --
 -- Setup for anaxlite_users table:
 --
+use mihe16;
 
 -- Ensure UTF8 as character encoding within connection.
 SET NAMES utf8;

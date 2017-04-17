@@ -41,6 +41,12 @@ class Functions
     }
 
 
+    /**
+     * Make an html table of registrated users
+     *
+     * @param array $allUsers Users to put in the table
+     * @return string HTML table
+     */
     public function getUsersTables($allUsers)
     {
         $users = [];
@@ -66,7 +72,7 @@ class Functions
             "Förnamn" . $this->orderby("fname"),
             "Efternamn" . $this->orderby("lname"),
             "Email" . $this->orderby("email"),
-            "Permission" . $this->orderby("permission"),
+            "Nivå" . $this->orderby("permission"),
             "Uppdatera",
             "Ta bort"
             ];
@@ -121,12 +127,24 @@ EOD;
     }
 
 
+    /**
+     * Inject Url object to create links
+     *
+     * @param object $url The Url object
+     * @return $this for chaining
+     */
     public function setUrl($url)
     {
         $this->url = $url;
         return $this;
     }
 
+    /**
+     * Inject User object to get data about the logged in user
+     *
+     * @param object $user User object
+     * @return $this for chaining
+     */
     public function setUser($user)
     {
         $this->user = $user;

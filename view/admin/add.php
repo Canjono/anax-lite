@@ -51,7 +51,7 @@ $successMsg = $app->session->getOnce("successMsg");
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="permission" class="col-sm-3 control-label">Permission</label>
+                    <label for="permission" class="col-sm-3 control-label">Nivå</label>
                     <div class="col-sm-1">
                         <input type="number" class="form-control" id="permission" name="permission"
                             min="1" max="2" value="1" required>
