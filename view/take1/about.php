@@ -2,6 +2,7 @@
 $laptop = $app->url->asset("img/laptop.png");
 $system = $app->url->create("status");
 $guessNumber = $app->url->create("../../kmom01/guess");
+$sql = "SELECT * FROM anaxlite_users";
 ?>
 
 <div class="container">

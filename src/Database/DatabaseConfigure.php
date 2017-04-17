@@ -1,0 +1,22 @@
+<?php
+
+namespace Canjono\Database;
+
+/**
+ * Config subclass for Database
+ */
+class DatabaseConfigure extends Database implements
+    \Anax\Common\ConfigureInterface
+{
+    use \Anax\Common\ConfigureTrait;
+
+    /**
+     * Set options by using configuration
+     *
+     * @return void
+     */
+    public function setDefaultsFromConfiguration()
+    {
+        parent::setOptions($this->config);
+    }
+}

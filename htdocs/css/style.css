@@ -75,7 +75,7 @@ body {
     height: 18em;
 }
 
-.table > tbody > tr > td,
+.calendar .table > tbody > tr > td,
 .table > thead > tr > th {
     text-align: center;
     vertical-align: middle;
@@ -89,12 +89,20 @@ body {
     color: red;
 }
 
+.green {
+    color: green;
+}
+
 .left {
     float: left;
 }
 
 .right {
     float: right;
+}
+
+.right-align {
+    text-align: right;
 }
 
 .calendar .month {
@@ -111,6 +119,10 @@ body {
 .img-calendar {
     width: 100%;
     margin-top: -80px;
+}
+
+.all-users .table {
+    font-size: 0.9em;
 }
 
 /*************************

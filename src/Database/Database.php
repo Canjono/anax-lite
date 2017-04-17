@@ -1,0 +1,164 @@
+<?php
+
+namespace Canjono\Database;
+
+/**
+ * Database class
+ */
+class Database
+{
+    /**
+     * @var array $options Used when creating the PDO object
+     * @var PDO $pdo The PDO object
+     * @var PDOStatement $stmt The last PDOStatement made.
+     */
+    private $options;
+    private $pdo = null;
+    private $stmt = null;
+
+
+    /**
+     * Constructor
+     *
+     * @param array $options Containing details for connecting to database
+     * @return void
+     */
+    public function __construct($options = [])
+    {
+        $this->setOptions($options);
+    }
+
+
+    /**
+     * Set options and connecting details
+     *
+     * @param array $options Containing details for connecting to database
+     * @return void
+     */
+    public function setOptions($options = [])
+    {
+        $default = [
+            "dsn" => null,
+            "username" => null,
+            "password" => null,
+            "driver_options" => null,
+            "fetch_mode" => \PDO::FETCH_OBJ,
+            "table_prefix" => null,
+            "session_key" => "Canjono\Database",
+            "verbose" => null,
+            "debug_connect" => false
+        ];
+        $this->options = array_merge($default, $options);
+    }
+
+
+    /**
+     * Connect to the database
+     *
+     * @return self
+     * @throws \Canjono\Database\Exception
+     */
+    public function connect()
+    {
+        if (!isset($this->options["dsn"])) {
+            throw new Exception("You can not connect, missing dsn");
+        }
+
+        try {
+            $this->pdo = new \PDO(
+                $this->options["dsn"],
+                $this->options["username"],
+                $this->options["password"],
+                $this->options["driver_options"]
+            );
+            if ($this->options["fetch_mode"]) {
+                $this->pdo->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, $this->options["fetch_mode"]);
+            }
+        } catch (\PDOException $e) {
+            if ($this->options["debug_connect"]) {
+                throw $e;
+            }
+            throw new Exception("Could not connect to database, hiding connection details.");
+        }
+        return $this;
+    }
+
+
+    /**
+     * Execute a select query with arguments and return the resultset
+     *
+     * @param string $query The SQL statement
+     * @param array $params The params array
+     * @return array with resultset
+     */
+    public function executeFetchAll($query, $params = [])
+    {
+        $this->execute($query, $params);
+        return $this->stmt->fetchAll();
+    }
+
+
+    /**
+     * Execute a select-query with arguments and return the first row
+     * in the resultset
+     *
+     * @param string $query The SQL statement
+     * @param array $params The params array
+     * @return array with resultset
+     */
+    public function executeFetch($query, $params = [])
+    {
+        $this->execute($query, $params);
+        return $this->stmt->fetch();
+    }
+
+
+    /**
+     * Execute a SQL-query and ignore the resultset
+     *
+     * @param string $query The SQL statement
+     * @param array $params The params array
+     * @return boolean Returns true on success, otherwise false
+     * @throws Exception when failing to prepare question.
+     */
+    public function execute($query, $params = [])
+    {
+        $this->stmt = $this->pdo->prepare($query);
+        if (!$this->stmt) {
+            $this->statementException($query, $params);
+        }
+
+        $res = $this->stmt->execute($params);
+        if (!$res) {
+            $this->statementException($query, $params);
+        }
+
+        return $res;
+    }
+
+
+    /**
+     * Throw exception with detailed message
+     *
+     * @param string $sql Statement to execute
+     * @param array $params to match ? in statement
+     * @return void
+     * @throws \Canjono\Database\Exception
+     */
+    public function statementException($sql, $params)
+    {
+        throw new Exception(
+            $this->stmt->errorInfo()[2]
+            . "<br><br>SQL ("
+            . substr_count($sql, "?")
+            . " params):<br><pre>$sql</pre><br>PARAMS ("
+            . count($params)
+            . "):<br><pre>"
+            . implode($params, "\n")
+            . "</pre>"
+            . ((count(array_filter(array_keys($params), 'is_string')) > 0)
+                ? "WARNING your params array has keys, should only have values."
+                : null)
+        );
+    }
+}

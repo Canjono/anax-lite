@@ -1,0 +1,11 @@
+<?php
+
+namespace Canjono\Database;
+
+/**
+ * Namespaced exception
+ */
+class Exception extends \Exception
+{
+
+}

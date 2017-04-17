@@ -1,12 +1,14 @@
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <p>Skapad av Michael Hedlund (michael.hedlund88@gmail.com)</p>
+    <div class="footer-wrap">
+        <footer class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <p>Skapad av Michael Hedlund (michael.hedlund88@gmail.com)</p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
     <!-- JQuery file -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
