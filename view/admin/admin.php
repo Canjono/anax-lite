@@ -18,7 +18,7 @@ $search = $app->url->create("admin/search");
                 <div class="form-group">
                     <label for="search" class="col-sm-1 control-label">Sök</label>
                     <div class="col-sm-6">
-                        <input type="search" class="form-control" id="search" name="search" required>
+                        <input type="search" class="form-control" id="search" name="search">
                     </div>
                 </div>
             </form>

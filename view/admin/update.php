@@ -63,7 +63,8 @@ $errorMsg = $app->session->getOnce("errorMsg");
                 <div class="form-group">
                     <label for="newPass" class="col-sm-3 control-label">Lösenord</label>
                     <div class="col-sm-6">
-                        <input type="password" class="form-control" id="newPass" name="newPass">
+                        <input type="password" class="form-control" id="newPass" name="newPass"
+                            placeholder="Fyll i om du vill ändra lösenordet">
                     </div>
                 </div>
                 <div class="form-group">
