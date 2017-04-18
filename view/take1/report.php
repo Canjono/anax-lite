@@ -95,7 +95,54 @@
                 bästisar är vi väl inte än.
             </p>
             <h3>Kmom03</h3>
-            <p>Redovisningstext</p>
+            <p><strong>Hur kändes det att jobba med PHP PDO, SQL och MySQL?</strong></p>
+            <p>
+                Jag har jobbat en del med det innan så det kändes bra, det var väl egentligen inga konstigheter.
+                Tycker det är ett rätt tydligt sätt att jobba på och man har bra koll på vad som händer. De sista delarna
+                i MySQL-uppgiften har jag inte använt så mycket innan, som t.ex. sub-queries och INNER JOIN så det var bra
+                att få lite mer kött på benen kring det.
+            </p>
+            <p><strong>Reflektera kring koden du skrev för att lösa uppgifterna, klasser, formulär, integration Anax
+                Lite?</strong></p>
+            <p>
+                Jag utgick mycket ifrån Database-klassen som finns på github.com/canax/Database. Borde nog egentligen ha
+                kopierat det direkt istället för att skriva själv då det tog sin lilla tid att få ordning på allt. I
+                $app har jag lagt in Database-klassen, en Query-klass som utför olika queries till databasen som t.ex.
+                att hämta alla användare och lägga till en ny användare, en Functions-klass som har metoder för att t.ex.
+                skapa en html-tabell och slå ihop två arrays till en query-sträng. Den klassen kan nog bli rätt stor i
+                slutändan så man kanske borde dela upp den i olika klasser. Jag har också lagt in en User-klass som håller
+                koll på den inloggade användarens properties och har metoder för att bl.a. uppdatera användarens data i
+                databasen. Det finns mycket jag skulle kunna förbättra i koden som att spara namnet på “user”-tabellen i
+                databasen och se till att återanvända mer kod istället för att skriva nytt. Stylen på admin-sidan har jag
+                inte lagt så mycket tid på som jag borde så det ser väl lite sisådär ut. Det har dock tagit lång tid att
+                bli klar med kursmomentet så jag kände i slutet att jag inte riktigt hinner fixa till det. Kanske senare.
+                Själva strukturen känns ändå okej kan jag tycka, men lite finjusteringar skulle inte skada. Jag har lagt
+                in en del färdiga användare till sidan. Vill man logga in som admin kan man skriva “Johndoe” (användarnamn)
+                “admin” (lösenord). Vill man logga in som en vanlig användare kan man skriva “Mumin” och “123”. Skillnaden
+                syns när man är inloggad och klickar på användarnamnet i navbaren. Där kan en admin klicka på “Admin”-länken
+                som för denne till admin-sidan där det går att redigera användare m.m. Admin kan ändra en användares “nivå”.
+                Nivå 1 betyder att man är en vanlig användare, och nivå 2 betyder att man har admin-behörigheter. Jag
+                sparade cookien “lastUser” där jag sparar användarnamnet på den senast inloggade användaren. När man går
+                in på inloggningssidan bör därför användarnamnet redan vara ifyllt om man varit inloggad förut.
+            </p>
+            <p><strong>Känner du dig hemma i ramverket, dess komponenter och struktur?</strong></p>
+            <p>
+                Jo, jag känner mig mindre och mindre vilsen kring hur allt är upplagt. Måste jag ändra eller lägga till
+                något vet jag oftast var jag ska lägga filer eller skriva om kod. Det känns rätt ordnat och bra nu när
+                man har hunnit jobba en del med det. Sen har jag ju inte direkt stenkoll på vad all kod gör, speciellt det
+                som ligger i vendor-mappen, men jag vet ändå hur jag kan dra nytta av klasserna som finns där.
+            </p>
+            <p><strong>Hur bedömer du svårighetsgraden på kursens inledande kursmoment, känner du att du lär dig
+                något/bra saker?</strong></p>
+            <p>
+                Själva uppgifterna är bra och lärorika. Man lär sig hur man kan lägga upp koden och hur man kan tänka när
+                man skapar ett sådant här ramverk. Dock har alla kursmomenten tagit väldigt lång tid att genomföra. 4 dagar
+                har jag i alla fall fått se till att ha till godo när jag har påbörjat varje moment, vilket nog är lite i
+                det högsta laget. Man vill ju gärna ha tid att sitta och experimentera lite, men jag har känt mig rätt
+                stressad att försöka hinna klart alltihop inom den tidsramen som finns. Extrauppgifterna har jag därför
+                inte gett mig på alls. Webbapps-momenten har jag lyckats bli klar med på högst 2 dagar så det har underlättat
+                en del. Så bra uppgifter men lite för mycket jobb för min del i alla fall.
+            </p>
             <h3>Kmom04</h3>
             <p>Redovisningstext</p>
             <h3>Kmom05</h3>
