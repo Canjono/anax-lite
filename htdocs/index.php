@@ -27,6 +27,7 @@ $app->query = new \Canjono\Query\Query();
 $app->cookie = new \Canjono\Cookie\Cookie();
 $app->user = new \Canjono\User\User();
 $app->functions = new \Canjono\Functions\Functions();
+$app->textfilter = new \Canjono\Textfilter\Textfilter();
 
 // Inject $app into the view container for use in view files.
 $app->view->setApp($app);

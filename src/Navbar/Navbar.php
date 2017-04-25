@@ -79,7 +79,8 @@ class Navbar implements \Anax\Common\ConfigureInterface
         $text = $val['text'] == "User" ? $this->user->getUsername() : $val['text'];
         $html = "<li class='dropdown'>"
             . "<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' "
-            . "aria-haspopup='true' aria-expanded='false'>{$text}</a>"
+            . "aria-haspopup='true' aria-expanded='false'>"
+            . "{$text} <span class='glyphicon glyphicon-triangle-bottom'></span></a>"
             . "<ul class='dropdown-menu'>";
         foreach ($val["dropdown"] as $subVal) {
             $route = call_user_func($this->urlCreator, $subVal["route"]);

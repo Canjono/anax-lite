@@ -66,6 +66,28 @@ body {
     border-bottom: 1px solid #960E1F;
 }
 
+/*************************
+*******Flash******
+**************************/
+.flash-wrap {
+    background-color: #333;
+    min-height: 10em;
+    margin-bottom: 1em;
+}
+
+
+/*************************
+*******Sidebar******
+**************************/
+.sidebar-wrap ul {
+    background-color: #333;
+}
+
+.sidebar-brand {
+    padding: 10px 15px;
+    font-size: 1.2em;
+    background-color: #222;
+}
 
 /*************************
 *******Main******
@@ -90,6 +112,10 @@ body {
     color: #555;
 }
 
+textarea.form-control {
+    height: 15em;
+}
+
 .red {
     color: red;
 }
@@ -108,6 +134,23 @@ body {
 
 .right-align {
     text-align: right;
+}
+
+.container .jumbotron {
+    padding: 1em;
+}
+
+.jumbotron {
+    background-color: #222;
+    color: #eee;
+}
+
+.jumbotron:hover {
+    background-color: #333;
+}
+
+.pages a {
+    text-decoration: none;
 }
 
 .calendar .month {
@@ -129,6 +172,39 @@ body {
 .all-users .table {
     font-size: 0.9em;
 }
+
+.textfilter pre {
+    background-color: inherit;
+    border: none;
+    color: inherit;
+    font-size: inherit;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+}
+
+.textfilter .format-section {
+    padding: 0 1em;
+    background-color: #222;
+}
+
+.textfilter .format-part {
+    padding-bottom: 1em;
+}
+
+.textfilter h2 {
+    text-decoration: underline;
+}
+
+.textfilter p {
+    padding-left: 1em;
+}
+
+.pages-list {
+    list-style-type: none;
+
+}
+
 
 /*************************
 *******Footer******
@@ -152,6 +228,12 @@ footer {
 /*************************
 *******Responsive******
 **************************/
+@media (max-width: 1000px) {
+    .nav a {
+        font-size: 0.9em;
+    }
+}
+
 @media (max-width: 500px) {
     .img-me {
         display: block;

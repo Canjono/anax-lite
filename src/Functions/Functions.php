@@ -51,8 +51,8 @@ class Functions
     {
         $users = [];
         foreach ($allUsers as $user) {
-            $updateRoute = $this->url->create("admin/update?user={$user->user}");
-            $deleteRoute = $this->url->create("admin/delete?user={$user->user}");
+            $updateRoute = $this->url->create("admin/users/update?user={$user->user}");
+            $deleteRoute = $this->url->create("admin/users/delete?user={$user->user}");
             $updateLink = "<a href='{$updateRoute}'>Uppdatera</a>";
             $deleteLink = "<a href='{$deleteRoute}'>Ta bort</a>";
             $alteredUser = [
@@ -126,6 +126,40 @@ class Functions
 EOD;
     }
 
+
+    /**
+    * Get a $_GET variable
+    *
+    * @param $key string Name of key to get value of
+    * @return string Encoded value
+    */
+    public function getGet($key, $default = null)
+    {
+        return isset($_GET[$key])
+            ? $_GET[$key]
+            : $default;
+    }
+
+
+    /**
+    * Get value from POST variable or return default value.
+    *
+    * @param mixed $key     to look for, or value array
+    * @param mixed $default value to set if key does not exists
+    *
+    * @return mixed value from POST or the default value
+    */
+    public function getPost($key, $default = null)
+    {
+        if (is_array($key)) {
+            $key = array_flip($key);
+            return array_replace($key, array_intersect_key($_POST, $key));
+        }
+
+        return isset($_POST[$key])
+            ? $_POST[$key]
+            : $default;
+    }
 
     /**
      * Inject Url object to create links

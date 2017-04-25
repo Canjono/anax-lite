@@ -144,7 +144,65 @@
                 en del. Så bra uppgifter men lite för mycket jobb för min del i alla fall.
             </p>
             <h3>Kmom04</h3>
-            <p>Redovisningstext</p>
+            <p><strong>Finns något att säga kring din klass för textfilter, eller rent allmänt om formattering och
+                filtrering av text som sparas i databasen av användaren?</strong></p>
+            <p>
+                Jag gjorde först en egen Textfilter-klass som fungerade bra, men jag kollade också sen lite på den färdiga
+                versionen som fanns tillgänglig. Hittade några förbättringar där som jag snodde och la in i min version.
+                Jag har aldrig använt sånt här förut så det var kul att se hur det funkar. Är ju egentligen rätt enkelt
+                när man väl ser vad som händer under huven (Markdown-klassen var ju dock lite större så den är väl kanske
+                inte fullt så enkel).
+            </p>
+            <p><strong>Berätta hur du tänkte när du strukturerade klasserna och databasen för webbsidor och
+                bloggposter?</strong></p>
+            <p>
+                Jag följde metoden som användes i övningen, så det blev väl inte så värst mycket eget tänk där. Jag hämtar
+                dem alltid som objekt från databasen och skriver ut den information jag vill åt. Jag har en Query-klass
+                som utför olika förfrågningar till databasen och den har nu fått utökning med en massa metoder för att
+                hämta all content, content av en viss typ, content med ett visst id, lägga till ny content o.s.v.
+                Dessa gör jag alltid i route-filerna och så skickar jag sen vidare objekten till template-filerna.
+                Det blir ju en del logik i själva template-filerna nu när jag skriver ut allt innehåll genom
+                foreach-loopar, så kanske man skulle ha haft en funktion som fixar det istället?
+            </p>
+            <p><strong>Förklara vilka routes som används för att demonstrera funktionaliteten för webbsidor och
+                blogg (så att en utomstående kan testa).</strong></p>
+            <p>
+                För att se på slutresultaten av allt innehåll klickar man på “Innehåll” i navbaren och sedan på
+                vilken sorts innehåll man vill se (sida, blogg eller block). Sedan är det lätt att klicka sig vidare.
+                Block-sidan är lite ful men jag ville att det skulle vara tydligt vilka delar som är ifrån databasen
+                så det får vara så (är väl lite lat där också). För att lägga till, redigera och ta bort innehåll får
+                man logga in som admin (“admin”, “admin”), klicka på användarnamnet längst upp till höger i navbaren,
+                klicka på admin i dropdownen och sedan på “Redigera innehåll”. Då ser man en tabell på allt innehål
+                som finns plus en länk till “Lägga till”-sidan. Även borttaget innehåll syns här, vet inte om det är
+                tänkt så. Länkarna för att redigera eller ta bort finns under “Action”-kolumnen i tabellen. Sedan är
+                det enkelt att klicka sig fram själv. Textfilter-uppgiften kommer man till genom att klicka på
+                “Textfilter” i navbaren.
+            </p>
+            <p><strong>Hur känns det att dokumentera databasen så här i efterhand?</strong></p>
+            <p>
+                Reverse engineer var superenkelt att använda och känns väldigt behändig att ha tillgång till. Nu
+                har jag ju inte gjort några komplicerade tabeller med foreign keys och annat så det är finns väl
+                inte så mycket annat att säga än så länge än att det känns enkelt.
+            </p>
+            <p><strong>Om du är självkritisk till koden du skriver i Anax Lite, ser du förbättringspotential och
+                möjligheter till alternativ struktur av din kod?</strong></p>
+            <p>
+                Jo, efter varje vecka känns det som att jag skulle vilja gå in i koden och finslipa och ändra lite.
+                Blir dock inget p.g.a. tidsbrist. Att det finns mycket att ändra på beror väl delvis på att man
+                lär sig en del nytt varje vecka och ser förbättringspotential på det gamla arbetet. Ett exempel är
+                att jag i början hämtade $_GET och $_POST-variabler utan någon funktion eller metod, vilket jag
+                ändrat på nu. Jag skrev först också en getGet-metod och en getPost-metod i min Functions-klass, men
+                nu i veckan såg jag att det redan finns i Request-klassen så jag har ändrat lite i den och använder
+                den nu istället. Finns en del funktioner jag kanske borde lägga in också som att redirecta utan
+                att använda header-funktionen och att rendera vyer från router-filerna på ett enklare sätt. Sen
+                borde jag också ha använt en config-fil för att lägga in namnen på users- och content-tabellerna
+                från databasen i min Query-klass. De har jag nu skrivit in själv direkt i __construct-metoden. När
+                jag la in en sidebar med ett “block” som innehåll fick jag ändra lite i min layout-fil där jag
+                lägger in alla vyer. Jag använder ju Bootstrap och fick skriva om lite för att få in sidebaren och
+                nu har det nog blivit lite knas med resterande sidor vad gäller html-struktur, så där borde jag
+                städa upp en del och ändra. Och så finns det annat att ändra på också förstås men texten börjar bli
+                lång nu så det får räcka.
+            </p>
             <h3>Kmom05</h3>
             <p>Redovisningstext</p>
             <h3>Kmom06</h3>

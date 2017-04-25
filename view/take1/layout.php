@@ -1,6 +1,6 @@
 <?php
 $this->renderView("take1/header", [
-    "title" => $title
+    "title" => $title . " | anaxlite"
 ]);
 ?>
 
@@ -10,9 +10,24 @@ $this->renderView("take1/header", [
 </div>
 <?php endif; ?>
 
+<?php if ($this->regionHasContent("breadcrumb")) : ?>
+<div class="breadcrumb-wrap">
+    <?php $this->renderRegion("breadcrumb") ?>
+</div>
+<?php endif; ?>
+
 <?php if ($this->regionHasContent("main")) : ?>
 <div class="main-wrap">
-    <?php $this->renderRegion("main") ?>
+    <div class="container">
+        <div class="row">
+            <?php if ($this->regionHasContent("sidebar")) : ?>
+            <div class="sidebar-wrap">
+                <?php $this->renderRegion("sidebar") ?>
+            </div>
+            <?php endif; ?>
+            <?php $this->renderRegion("main") ?>
+        </div>
+    </div>
 </div>
 <?php endif; ?>
 

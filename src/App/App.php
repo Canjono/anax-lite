@@ -7,5 +7,14 @@ namespace Canjono\App;
  */
 class App
 {
-
+    /**
+     * Redirect to another page
+     *
+     * @param $url string Url to redirect to
+     * @return void
+     */
+    public function redirect($url)
+    {
+        $this->response->redirect($this->url->create($url));
+    }
 }

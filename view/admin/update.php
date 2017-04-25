@@ -1,6 +1,6 @@
 <?php
-$update = $app->url->create("admin/doUpdate");
-$admin = $app->url->create("admin");
+$update = $app->url->create("admin/users/doUpdate");
+$admin = $app->url->create("admin/users");
 $successMsg = $app->session->getOnce("successMsg");
 $errorMsg = $app->session->getOnce("errorMsg");
 ?>

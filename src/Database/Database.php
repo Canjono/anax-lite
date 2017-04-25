@@ -161,4 +161,26 @@ class Database
                 : null)
         );
     }
+
+
+    /**
+     * Return last insert id from autoincremented key on INSERT.
+     *
+     * @return integer as last insert id.
+     */
+    public function lastInsertId()
+    {
+        return $this->pdo->lastInsertId();
+    }
+
+
+    /**
+    * Return rows affected of last INSERT, UPDATE, DELETE
+    *
+    * @return integer as rows affected on last statement
+    */
+    public function rowCount()
+    {
+        return $this->stmt->rowCount();
+    }
 }

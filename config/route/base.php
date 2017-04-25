@@ -26,6 +26,18 @@ $app->router->add("report", function () use ($app) {
     $app->response->setBody($body)->send();
 });
 
+$app->router->add("textfilter", function () use ($app) {
+    $data = [
+        "title" => "Textfilter",
+    ];
+
+    $app->view->add("take1/layout", $data, "layout");
+    $app->view->add("take1/textfilter", ["region" => "main"], "main", 0);
+
+    $body = $app->view->renderBuffered("layout");
+    $app->response->setBody($body)->send();
+});
+
 $app->router->add("about", function () use ($app) {
     $data = [
         "title" => "About",

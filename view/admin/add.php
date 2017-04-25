@@ -1,5 +1,5 @@
 <?php
-$validate = $app->url->create("admin/add/validate");
+$validate = $app->url->create("admin/users/add/validate");
 $errorMsg = $app->session->getOnce("errorMsg");
 $successMsg = $app->session->getOnce("successMsg");
 ?>

@@ -25,9 +25,32 @@ return [
             "dropdown" => null,
         ],
         "calendar" => [
-            "text" => "Månadskalender",
+            "text" => "Kalender",
             "route" => "calendar",
             "dropdown" => null,
+        ],
+        "textfilter" => [
+            "text" => "Textfilter",
+            "route" => "textfilter",
+            "dropdown" => null,
+        ],
+        "content" => [
+            "text" => "Innehåll",
+            "route" => "content",
+            "dropdown" => [
+                "pages" => [
+                    "text" => "Sidor",
+                    "route" => "content/pages",
+                ],
+                "blog" => [
+                    "text" => "Blogg",
+                    "route" => "content/blog",
+                ],
+                "blocks" => [
+                    "text" => "Block",
+                    "route" => "content/blocks",
+                ],
+            ],
         ],
         "about" => [
             "text" => "Om",
