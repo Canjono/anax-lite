@@ -17,7 +17,7 @@ $img = $app->url->asset("img/webshop/" . $imgName);
             </div>
             <?php endif; ?>
             <div class="page-header">
-                <h1>Product</h1>
+                <h1>Uppdatera produkt</h1>
             </div>
         </div>
     </div>

@@ -14,9 +14,6 @@ $successMsg = $app->session->getOnce("success");
                 <?= $successMsg ?>
             </div>
             <?php endif; ?>
-            <div class="page-header">
-                <h1>Product</h1>
-            </div>
         </div>
     </div>
     <div class="row">
