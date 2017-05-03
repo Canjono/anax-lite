@@ -1,9 +1,10 @@
 <?php
+
+namespace Canjono\Calendar;
+
 /**
  * Calendar class
  */
-namespace Canjono\Calendar;
-
 class Calendar
 {
     /**

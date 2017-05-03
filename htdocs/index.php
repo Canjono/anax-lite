@@ -24,6 +24,7 @@ $app->session = new \Canjono\Session\Session();
 $app->calendar = new \Canjono\Calendar\Calendar();
 $app->db = new \Canjono\Database\DatabaseConfigure();
 $app->query = new \Canjono\Query\Query();
+$app->queryWebshop = new \Canjono\QueryWebshop\QueryWebshop();
 $app->cookie = new \Canjono\Cookie\Cookie();
 $app->user = new \Canjono\User\User();
 $app->functions = new \Canjono\Functions\Functions();
@@ -71,6 +72,9 @@ $app->db->connect();
 
 // Inject Database object to Query
 $app->query->setDatabase($app->db);
+
+// Inject Database object to QueryWebshop
+$app->queryWebshop->setDatabase($app->db);
 
 // Init the user object if logged in
 if ($app->session->get("user")) {

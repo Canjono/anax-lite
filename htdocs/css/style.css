@@ -102,8 +102,7 @@ body {
     height: 18em;
 }
 
-.calendar .table > tbody > tr > td,
-.table > thead > tr > th {
+.calendar .table > tbody > tr > td {
     text-align: center;
     vertical-align: middle;
 }
@@ -203,6 +202,10 @@ textarea.form-control {
 .pages-list {
     list-style-type: none;
 
+}
+
+.game-image {
+    height: 250px;
 }
 
 

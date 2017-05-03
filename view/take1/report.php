@@ -204,7 +204,43 @@
                 lång nu så det får räcka.
             </p>
             <h3>Kmom05</h3>
-            <p>Redovisningstext</p>
+            <p><strong>Gick det bra att komma igång med det vi kallar programmering av databas, med transaktioner,
+                lagrade procedurer, triggers, funktioner?</strong></p>
+            <p>
+                Jo, det gick rätt bra. Det är kul att få ha provat på lite mer avancerad programmering med MySQL
+                än att bara skapa vanliga tabeller och sedan göra det mesta av jobbet i PHP. Har provat på
+                transaktioner lite grann innan men allt annat var nytt för mig. Allt känns ju väldigt användbart.
+            </p>
+            <p><strong>Hur är din syn på att programmera på detta viset i databasen?</strong></p>
+            <p>
+                Att kunna skapa ett API till databasen gör ju att koden i PHP och anax-lite blir snyggare och
+                tydligare. Vet ju dock inte hur det skiljer sig med hastighet och så mellan att göra så här och som
+                jag gjort innan, men att göra mer programmering i databasen känns som en bra metod. Det kan ju också
+                vara lättare att testa saker om man slipper blanda in PHP i det hela. Ser man först till att alla
+                procedurer och sånt funkar i databasen och sedan får problem i PHP så blir det lättare att felsöka.
+            </p>
+            <p><strong>Några reflektioner kring din kod för backenden till webbshopen?</strong></p>
+            <p>
+                Känner väl när jag bläddrar omkring i Workbench bland alla 100-tals rader kod att det vore bra att
+                organisera det lite bättre. Fyller man på med fler och fler tabeller blir det i slutändan lite
+                jobbigt att scrolla omkring så mycket så det hade ju inte varit fel att kunna dela upp allt i olika
+                filer. Vet inte om det är möjligt, men det är i alla fall en nackdel med hur jag har jobbat nu.
+                Hade ju också kunnat flytta runt lite så att jag kanske t.ex. sorterar funktioner, vyer och procedurer
+                på egna platser. Är lite väl kaotiskt nu kan jag tycka då jag bara har lagt tabellerna i början av
+                koden och resten ligger lite hipp som häpp.
+            </p>
+            <p><strong>Något du vill säga om koden generellt i och kring Anax Lite?</strong></p>
+            <p>
+                Nu har jag inte ändrat något i databashanteringen när det gäller tidigare kursmoment så koden är ju
+                inte enhetlig på den fronten, och så är det garanterat om jag kollar på övrig kod också. Har inte
+                blivit att jag i efterhand har ändrat så mycket i tidigare kod när jag lärt mig skriva på ett nytt
+                sätt, så det största problemet nu är väl att det ser ut som att olika personer har skrivit koden
+                beroende på var man kollar. Så en genomgång av all kod hade inte varit fel. Hade ju också kunnat
+                lägga in mer exceptions-filer, config-filer och annat till mina egna klasser. Men annars tycker jag
+                väl att det är ganska enkelt att jobba med ramverket som det är nu. Känner mig mer och mer bekväm
+                med att skapa nya routes och använda klasserna där det passar. Får väl kanske chansen att göra en
+                mer städad version i projektet om jag gissar rätt.
+            </p>
             <h3>Kmom06</h3>
             <p>Redovisningstext</p>
             <h3>Kmom07-10</h3>
