@@ -43,7 +43,7 @@ class Textfilter
     * Helper, BBCode formatting converting to HTML.
     *
     * @param string text The text to be converted.
-    * @returns string the formatted text.
+    * @return string the formatted text.
     */
     public function bbcode2html($text)
     {

@@ -38,7 +38,9 @@ CREATE TABLE `webshop_prodCategory` (
 	`id` INT AUTO_INCREMENT,
 	`category` CHAR(10),
 
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+    -- Adding an index for category column
+    UNIQUE KEY `category_unique` (`category`)
 );
 
 CREATE TABLE `webshop_product` (
@@ -48,7 +50,11 @@ CREATE TABLE `webshop_product` (
     `price` DECIMAL(7, 2),
     `platform` VARCHAR(20),
 
-	PRIMARY KEY (`id`)
+	PRIMARY KEY (`id`),
+    -- Adding an index for name column
+    KEY `index_name` (`name`),
+    -- Adding an index for platform column
+    KEY `index_platform` (`platform`)
 );
 
 CREATE TABLE `webshop_prod2cat` (

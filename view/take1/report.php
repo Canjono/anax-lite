@@ -242,7 +242,58 @@
                 mer städad version i projektet om jag gissar rätt.
             </p>
             <h3>Kmom06</h3>
-            <p>Redovisningstext</p>
+            <p><strong>Var du bekant med begreppet index i databaser sedan tidigare?</strong></p>
+            <p>
+                Jo, jag har provat på att lägga in index förut. Dock har jag aldrig använt EXPLAIN förut och fått
+                se hur det kan skilja sig mellan att använda det och inte. Fick ju lite problem med att använda
+                fulltext-index i bths databas eftersom att InnoDB inte verkar ha stött det i tidigare
+                MySQL-versioner. Det verkar som att det hade funkat med MyISAM, men jag hoppade över det.
+            </p>
+            <p><strong>Berätta om hur du jobbade i uppgiften om index och vilka du valde att lägga till och
+                skillnaden före/efter.</strong></p>
+            <p>
+                Jag tänkte utifrån ett kundperspektiv vilka sökningar som kunde vara relevanta och valde
+                namnet på spelet, plattformen som spelet tillhör och namn på kategorierna. Söker man efter
+                ett visst spel behöver man förstås kolla efter namnen på alla spelen så det fick ett
+                vanligt index, hade tänkt köra med ett fulltext-index för att göra det lättare att hitta
+                saker men då hade jag tydligen varit tvungen att ändra storage engine från InnoDB till
+                MyISAM så jag tänkte att jag hoppar över det så inget går snett. En kund kanske bara är
+                intresserad av spel till en viss plattform (t.ex. Playstation 4 eller Xbox One) så den
+                kolumnen fick också ett vanligt index. Dessa två kolumner finns i min produkt-tabell och
+                skillnaden efter att jag lagt in indexen var att enbart de rader som stämmer överens med
+                WHERE-frågan behövdes besökas istället för en full table scan. En kund kanske också vill
+                leta efter spel av en viss kategori (t.ex. action eller adventure) så jag la in ett index
+                på den kolumnen i min kategori-tabell. Dessa kommer alltid vara unika så jag skapa indexet
+                genom att göra kolumnen UNIQUE. Kanske man till och med kan låta namnet på kategorin vara
+                en primary key. Även här blev skillnaden att bara den rad som stämmer överens med WHERE-frågan
+                behöver besökas istället för en full table scan.
+            </p>
+            <p><strong>Har du tidigare erfarenheter av att skriva kod som testar annan kod?</strong></p>
+            <p>
+                Jo, det blev ju en hel del enhetstestning med unittest i oopython-kursen. PHPUnit känns
+                ju väldigt likartat så man kände sig rätt hemma fort.
+            </p>
+            <p><strong>Hur ser du på begreppet enhetstestning och att skriva testbar kod?</strong></p>
+            <p>
+                Tycker att det är användbart och gör att man känner sig säkrare i att koden funkar som
+                man tänkt. Dock är det ju lätt att ligga på latsidan och strunta i det, men det
+                underlättar faktiskt när man väl ha gjort det. Gör man ett väldigt litet program så kan
+                det ju dock kännas lite onödigt. Sen vet jag inte vad jag tycker om att skriva testbar kod
+                bara för den skull att den ska gå att testa. Är den testbar kan man lätt kolla om den
+                funkar som tänkt, men det kan ju bli några extra rader kod. Jaja, kanske det är bra i
+                slutändan om man vill minska risken för problem senare.
+            </p>
+            <p><strong>Hur gick det att hitta testbar kod bland dina klasser i Anax Lite?</strong></p>
+            <p>
+                De flesta klasserna jag gjort är ju beroende av andra klasser eller databasen så det var
+                inte hur mycket som helst av välja bland. Började med att försöka göra ett test till min
+                Session-klass, men då blev det problem när jag skulle starta en session. Kanske har att
+                göra med att den slås igång från terminalen eller nåt. Struntade i alla fall i det då
+                och valde Textfilter-klassen istället. Den är i och för sig beroende av Markdown-klassen,
+                men jag tänkte det får vara då jag inte injectar den eller så. Fixade 100% i kodtäckning
+                så det blev ju rätt bra. Man märker ju dock att 100% kodtäckning inte betyder att allt
+                nödvändigtvis funkar som det ska då alla utfall egentligen inte är testade.
+            </p>
             <h3>Kmom07-10</h3>
             <p>Redovisningstext</p>
         </div>

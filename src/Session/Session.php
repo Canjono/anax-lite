@@ -21,6 +21,7 @@ class Session
     }
 
 
+
     /**
      * Starts the session if not exists
      * @return void
